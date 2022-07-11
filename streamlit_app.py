@@ -38,7 +38,7 @@ try:
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
         fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())  # normalize the json version of the response 
         streamlit.dataframe(fruityvice_normalized)   # output it to the screen as a table
-  except URLERROR as e:
+except URLERROR as e:
     streamlit.error()
 
 
